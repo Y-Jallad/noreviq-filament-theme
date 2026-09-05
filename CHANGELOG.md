@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.3 - 2026-09-05
+
+- Clarified that the plugin must be registered before publishing its assets.
+- Removed broad application cache clearing from the installation flow.
+- Added concise troubleshooting guidance for missing theme styles.
+
 ## 1.0.2 - 2026-09-05
 
 - Added application cache clearing to the documented asset installation flow.

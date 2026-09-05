@@ -37,9 +37,13 @@ ready-to-use CSS with no frontend build step in the consuming application.
 
 ## Installation
 
+### 1. Install the package
+
 ```bash
 composer require noreviq/filament-theme
 ```
+
+### 2. Register the plugin
 
 Register the plugin on each panel that should use Noreviq:
 
@@ -55,13 +59,20 @@ public function panel(Panel $panel): Panel
 }
 ```
 
-Publish the theme assets and clear cached application state after registering
-the plugin:
+### 3. Publish the assets
+
+> [!IMPORTANT]
+> Register the plugin before running the asset command. Filament discovers
+> Noreviq's panel assets from the registered plugin, so running the command
+> before registration will not publish the theme styles.
+
+After registering the plugin and choosing any presets, publish the theme assets:
 
 ```bash
 php artisan filament:assets
-php artisan optimize:clear
 ```
+
+No configuration file or frontend build is required.
 
 ## Options
 
@@ -84,11 +95,20 @@ NoreviqThemePlugin::make()
 | Shadows | `Flat`, `Balanced`, `Elevated` | `Balanced` |
 | Auth | `Noreviq`, `Native` | `Noreviq` |
 
-Run both commands again after changing a preset or upgrading the package.
+Run `php artisan filament:assets` again after changing a preset or upgrading the
+package.
 
 The palette is part of the theme and is intentionally fixed. Noreviq does not
 change panel navigation, dimensions, content width, branding, font, routes,
 authentication, authorization, responsiveness, or component behavior.
+
+## Troubleshooting
+
+If the default Filament theme still appears:
+
+1. Confirm that the plugin is registered on the active panel.
+2. Run `php artisan filament:assets` after registration.
+3. Hard refresh the browser.
 
 ## Development
 
