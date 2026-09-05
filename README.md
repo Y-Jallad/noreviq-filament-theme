@@ -11,22 +11,25 @@ ready-to-use CSS with no frontend build step in the consuming application.
 
 ## Preview
 
-<table>
-    <tr>
-        <td width="50%"><img src="docs/images/noreviq-login-dark.png" alt="Noreviq sign-in page in dark mode"></td>
-        <td width="50%"><img src="docs/images/noreviq-components-dark.png" alt="Noreviq component lab in dark mode"></td>
-    </tr>
-    <tr>
-        <td align="center"><sub>Authentication</sub></td>
-        <td align="center"><sub>Native Filament components</sub></td>
-    </tr>
-</table>
-
-<details>
-    <summary><strong>Light mode preview</strong></summary>
+<p align="center">
+    <img src="docs/images/noreviq-login-dark.png" alt="Noreviq sign-in page in dark mode" width="100%">
     <br>
+    <sub>Authentication · Dark mode</sub>
+</p>
+
+<p align="center">
+    <img src="docs/images/noreviq-components-dark.png" alt="Noreviq component lab in dark mode" width="100%">
+    <br>
+    <sub>Native Filament components · Dark mode</sub>
+</p>
+
+### Light mode
+
+<p align="center">
     <img src="docs/images/noreviq-details-light.png" alt="Noreviq schema components in light mode" width="100%">
-</details>
+    <br>
+    <sub>Native Filament components · Light mode</sub>
+</p>
 
 ## Compatibility
 
@@ -109,15 +112,6 @@ If the default Filament theme still appears:
 1. Confirm that the plugin is registered on the active panel.
 2. Run `php artisan filament:assets` after registration.
 3. Hard refresh the browser.
-
-## Development
-
-```bash
-composer install
-node bin/build.mjs
-node bin/verify.mjs
-composer test
-```
 
 ## License
 

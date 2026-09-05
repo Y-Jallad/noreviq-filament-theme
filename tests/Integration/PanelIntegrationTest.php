@@ -52,6 +52,46 @@ final class PanelIntegrationTest extends TestCase
     }
 
     #[Test]
+    public function every_visual_option_combination_registers_the_expected_assets(): void
+    {
+        $testedCombinations = 0;
+
+        foreach (CornerStyle::cases() as $cornerStyle) {
+            foreach (ShadowStyle::cases() as $shadowStyle) {
+                foreach (AuthStyle::cases() as $authStyle) {
+                    $panel = (new Panel)->id("preset-{$testedCombinations}");
+                    $plugin = (new NoreviqThemePlugin)
+                        ->corners($cornerStyle)
+                        ->shadows($shadowStyle)
+                        ->authStyle($authStyle);
+
+                    $plugin->register($panel);
+
+                    $expectedAssets = [
+                        'noreviq-theme',
+                        "noreviq-corners-{$cornerStyle->value}",
+                        "noreviq-shadows-{$shadowStyle->value}",
+                    ];
+
+                    if ($authStyle === AuthStyle::Noreviq) {
+                        $expectedAssets[] = 'noreviq-auth';
+                    }
+
+                    self::assertSame(
+                        $expectedAssets,
+                        $this->assetIds($panel),
+                        "Failed {$cornerStyle->value}/{$shadowStyle->value}/{$authStyle->value}",
+                    );
+
+                    $testedCombinations++;
+                }
+            }
+        }
+
+        self::assertSame(18, $testedCombinations);
+    }
+
+    #[Test]
     public function it_does_not_change_structural_panel_configuration(): void
     {
         $panel = (new Panel)
