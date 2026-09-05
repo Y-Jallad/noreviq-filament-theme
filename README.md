@@ -39,7 +39,6 @@ ready-to-use CSS with no frontend build step in the consuming application.
 
 ```bash
 composer require noreviq/filament-theme
-php artisan filament:assets
 ```
 
 Register the plugin on each panel that should use Noreviq:
@@ -54,6 +53,12 @@ public function panel(Panel $panel): Panel
         // Keep your normal panel configuration here.
         ->plugin(NoreviqThemePlugin::make());
 }
+```
+
+Publish the theme assets after registering the plugin:
+
+```bash
+php artisan filament:assets
 ```
 
 ## Options
@@ -76,6 +81,9 @@ NoreviqThemePlugin::make()
 | Corners | `Sharp`, `Subtle`, `Native` | `Sharp` |
 | Shadows | `Flat`, `Balanced`, `Elevated` | `Balanced` |
 | Auth | `Noreviq`, `Native` | `Noreviq` |
+
+Run `php artisan filament:assets` again after changing a preset or upgrading the
+package.
 
 The palette is part of the theme and is intentionally fixed. Noreviq does not
 change panel navigation, dimensions, content width, branding, font, routes,
