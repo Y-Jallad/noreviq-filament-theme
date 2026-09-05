@@ -1,0 +1,416 @@
+/* Actions and feedback primitives. Semantic colors remain owned by Filament. */
+
+:where(.fi-btn):not(:where(.fi-btn-group .fi-btn, .fi-fo-toggle-buttons .fi-btn)) {
+    border-radius: var(--noreviq-radius-control);
+    font-weight: 600;
+    letter-spacing: 0;
+    transition: background-color var(--noreviq-motion), border-color var(--noreviq-motion), box-shadow var(--noreviq-motion), color var(--noreviq-motion);
+}
+
+:where(.fi-btn.fi-color-primary:not(.fi-outlined)):not(:where(.fi-btn-group .fi-btn, .fi-fo-toggle-buttons .fi-btn)) {
+    background-color: var(--noreviq-primary);
+    background-image: none;
+    color: white;
+    box-shadow: var(--noreviq-shadow-action);
+}
+
+:where(.fi-btn.fi-color-primary:not(.fi-outlined)):not(:where(.fi-btn-group .fi-btn, .fi-fo-toggle-buttons .fi-btn)):hover {
+    background-color: var(--noreviq-primary-hover);
+    background-image: none;
+    box-shadow: var(--noreviq-shadow-action);
+}
+
+:where(.fi-btn.fi-color-primary:not(.fi-outlined)):not(:where(.fi-btn-group .fi-btn, .fi-fo-toggle-buttons .fi-btn)):active {
+    background-color: var(--noreviq-primary-active);
+}
+
+:where(.fi-btn.fi-color-primary.fi-outlined):not(:where(.fi-btn-group .fi-btn, .fi-fo-toggle-buttons .fi-btn)) {
+    background-color: transparent;
+    color: var(--noreviq-primary-text);
+}
+
+:where(.fi-btn.fi-color-primary.fi-outlined):not(:where(.fi-btn-group .fi-btn, .fi-fo-toggle-buttons .fi-btn)):hover {
+    background-color: var(--noreviq-primary-soft);
+}
+
+.fi-btn:focus-visible,
+.fi-icon-btn:focus-visible,
+.fi-link:focus-visible {
+    outline: 2px solid var(--noreviq-focus-outline);
+    outline-offset: 2px;
+}
+
+.fi-icon-btn {
+    border-radius: var(--noreviq-radius-control);
+    transition: background-color var(--noreviq-motion), color var(--noreviq-motion);
+}
+
+.fi-btn-group {
+    border-radius: var(--noreviq-radius-control);
+}
+
+.fi-icon-btn:hover {
+    background-color: var(--noreviq-primary-soft);
+}
+
+.fi-icon-btn.fi-color-primary,
+.fi-link.fi-color-primary {
+    color: var(--noreviq-primary-text);
+}
+
+.fi-link {
+    border-radius: var(--noreviq-radius-control);
+    font-weight: 600;
+    text-underline-offset: 0.18em;
+}
+
+.fi-badge {
+    border-radius: var(--noreviq-radius-pill);
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.fi-avatar,
+.fi-avatar.fi-circular {
+    border-radius: var(--noreviq-radius-round);
+}
+
+.fi-callout {
+    border-radius: var(--noreviq-radius-card);
+    background-color: var(--noreviq-surface);
+    box-shadow: var(--noreviq-shadow-surface), 0 0 0 1px var(--noreviq-border);
+}
+
+.fi-callout.fi-color-primary {
+    background-image: linear-gradient(90deg, var(--noreviq-primary-soft), transparent 48%);
+}
+
+.fi-callout-heading,
+.fi-empty-state-heading,
+.fi-ta-empty-state-heading {
+    color: var(--noreviq-text);
+    font-weight: 700;
+}
+
+.fi-callout-description,
+.fi-empty-state-description,
+.fi-ta-empty-state-description {
+    color: var(--noreviq-text-muted);
+}
+
+.fi-empty-state,
+.fi-ta-empty-state {
+    border-radius: var(--noreviq-radius-card);
+    background-color: var(--noreviq-surface);
+    background-image: none;
+}
+
+.fi-empty-state-icon-bg,
+.fi-ta-empty-state-icon-bg {
+    border-radius: var(--noreviq-radius-control);
+    background-color: var(--noreviq-primary-soft);
+    color: var(--noreviq-primary-text);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--noreviq-primary) 16%, transparent);
+}
+
+.fi-loading-indicator {
+    color: var(--noreviq-primary-text);
+}
+
+/* Form controls use a precise, flat skin while Filament retains all geometry. */
+
+.fi-fo-field-label-content,
+.fi-input-wrp-label {
+    color: var(--noreviq-text);
+    font-weight: 600;
+}
+
+.fi-fo-field-wrp-error-message,
+.fi-fo-field-wrp-error-list {
+    font-weight: 600;
+}
+
+.fi-input-wrp {
+    border-radius: var(--noreviq-radius-control);
+    background-color: var(--noreviq-surface);
+    transition: background-color var(--noreviq-motion), box-shadow var(--noreviq-motion);
+}
+
+.fi-input-wrp:not(.fi-invalid) {
+    box-shadow: var(--noreviq-ring-control);
+}
+
+.fi-input-wrp:not(.fi-invalid):not(:has(.fi-ac-action:focus)):focus-within {
+    box-shadow: var(--noreviq-ring-focus);
+}
+
+.fi-input,
+.fi-select-input,
+.fi-fo-textarea,
+.fi-fo-date-time-picker-display-text-input {
+    color: var(--noreviq-text);
+    caret-color: var(--noreviq-primary);
+}
+
+.fi-input::placeholder,
+.fi-fo-textarea::placeholder {
+    color: color-mix(in oklab, var(--noreviq-text-muted) 74%, transparent);
+}
+
+.fi-input-wrp-prefix,
+.fi-input-wrp-suffix,
+.fi-input-wrp-actions {
+    color: var(--noreviq-text-muted);
+}
+
+.fi-checkbox-input,
+.fi-radio-input {
+    box-shadow: 0 0 0 1px var(--noreviq-border-strong);
+}
+
+.fi-checkbox-input {
+    border-radius: var(--noreviq-radius-control);
+}
+
+.fi-toggle {
+    border-radius: var(--noreviq-radius-toggle);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, currentColor 16%, transparent);
+}
+
+.fi-toggle > :first-child {
+    border-radius: var(--noreviq-radius-toggle-handle);
+    background-color: var(--noreviq-surface);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--noreviq-border-strong) 78%, transparent);
+}
+
+.fi-checkbox-input:focus-visible,
+.fi-radio-input:focus-visible {
+    outline: 2px solid var(--noreviq-focus-outline);
+    outline-offset: 2px;
+}
+
+.fi-fo-slider {
+    border-color: var(--noreviq-border);
+    border-radius: var(--noreviq-radius-control);
+    background-color: var(--noreviq-surface-muted);
+    box-shadow: var(--noreviq-ring-control);
+}
+
+.fi-fo-slider .noUi-connect {
+    border-radius: var(--noreviq-radius-control);
+    background-color: var(--noreviq-primary);
+}
+
+.fi-fo-slider .noUi-connects,
+.fi-fo-slider .noUi-tooltip {
+    border-radius: var(--noreviq-radius-control);
+}
+
+.fi-fo-slider .noUi-handle {
+    border-color: var(--noreviq-surface);
+    border-radius: var(--noreviq-radius-toggle-handle);
+    background-color: var(--noreviq-primary);
+    box-shadow: 0 0 0 1px var(--primary-400);
+}
+
+.fi-fo-slider .noUi-handle::before,
+.fi-fo-slider .noUi-handle::after {
+    background-color: color-mix(in oklab, white 68%, transparent);
+}
+
+.fi-fo-slider .noUi-handle:focus-visible {
+    outline: 2px solid var(--noreviq-focus-outline);
+    outline-offset: 2px;
+}
+
+.fi-fo-color-picker-preview {
+    border-radius: var(--noreviq-radius-toggle-handle);
+}
+
+.fi-fo-checkbox-list-option,
+.fi-fo-radio-label {
+    border-radius: var(--noreviq-radius-control);
+    transition: background-color var(--noreviq-motion);
+}
+
+.fi-fo-checkbox-list-option:hover,
+.fi-fo-radio-label:hover {
+    background-color: var(--noreviq-primary-soft);
+}
+
+.fi-fo-checkbox-list-option-label,
+.fi-fo-radio-label-text {
+    color: var(--noreviq-text);
+}
+
+.fi-fo-checkbox-list-option-description,
+.fi-fo-radio-label-description {
+    color: var(--noreviq-text-muted);
+}
+
+.fi-select-input-ctn,
+.fi-fo-date-time-picker-panel,
+.fi-fo-color-picker-panel {
+    border-radius: var(--noreviq-radius-overlay);
+    background-color: var(--noreviq-surface);
+    box-shadow: var(--noreviq-shadow-overlay), 0 0 0 1px var(--noreviq-border);
+}
+
+.fi-select-input-search-ctn,
+.fi-fo-date-time-picker-panel-header {
+    border-color: var(--noreviq-border);
+    background-color: var(--noreviq-surface-subtle);
+}
+
+.fi-select-input-option {
+    border-radius: var(--noreviq-radius-control);
+    color: var(--noreviq-text);
+}
+
+.fi-select-input-option:hover,
+.fi-select-input-option.fi-selected {
+    background-color: var(--noreviq-primary-soft);
+    color: var(--noreviq-primary-text);
+}
+
+.fi-select-input-option-group,
+.fi-select-input-message,
+.fi-select-input-placeholder {
+    color: var(--noreviq-text-muted);
+}
+
+.fi-select-input-value-badges-ctn .fi-badge,
+.fi-fo-tags-input-tags-ctn .fi-badge {
+    background-color: var(--noreviq-primary-soft);
+    color: var(--noreviq-primary-text);
+}
+
+.fi-fo-date-time-picker-calendar-day {
+    border-radius: var(--noreviq-radius-control);
+    color: var(--noreviq-text);
+}
+
+.fi-fo-date-time-picker-calendar-day:hover {
+    background-color: var(--noreviq-primary-soft);
+    color: var(--noreviq-primary-text);
+}
+
+.fi-fo-date-time-picker-calendar-day.fi-selected {
+    background-color: var(--noreviq-primary);
+    color: white;
+    box-shadow: none;
+}
+
+.fi-fo-date-time-picker-calendar-day-today {
+    box-shadow: inset 0 0 0 1px var(--noreviq-primary);
+}
+
+.fi-fo-rich-editor-toolbar,
+.fi-fo-rich-editor-panel-header {
+    border-color: var(--noreviq-border);
+    background-color: var(--noreviq-surface-subtle);
+}
+
+.fi-fo-rich-editor-toolbar-group {
+    border-radius: var(--noreviq-radius-control);
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.fi-fo-rich-editor-tool,
+.fi-fo-rich-editor-dropdown-tool-trigger {
+    border-radius: var(--noreviq-radius-control);
+}
+
+.fi-fo-rich-editor-custom-block-btn,
+.fi-fo-rich-editor-merge-tag-btn,
+.fi-fo-rich-editor-uploading-file,
+.fi-fo-rich-editor-text-color-select-option-preview,
+.fi-fo-markdown-editor,
+.fi-fo-markdown-editor .editor-toolbar button {
+    border-radius: var(--noreviq-radius-control);
+}
+
+.fi-fo-rich-editor-tool:hover,
+.fi-fo-rich-editor-tool.fi-active,
+.fi-fo-rich-editor-dropdown-tool-trigger:hover {
+    background-color: var(--noreviq-primary-soft);
+    color: var(--noreviq-primary-text);
+}
+
+.fi-fo-rich-editor-floating-toolbar,
+.fi-fo-rich-editor-dropdown-tool-menu,
+.fi-fo-rich-editor-custom-blocks-ctn,
+.fi-fo-rich-editor-panels {
+    border-radius: var(--noreviq-radius-overlay);
+    background-color: var(--noreviq-surface);
+    box-shadow: var(--noreviq-shadow-overlay), 0 0 0 1px var(--noreviq-border);
+}
+
+.fi-fo-file-upload-input-ctn {
+    border-radius: var(--noreviq-radius-control);
+    background-color: var(--noreviq-surface-subtle);
+    background-image: linear-gradient(90deg, var(--noreviq-primary-soft), transparent 46%);
+    box-shadow: inset 0 0 0 1px var(--noreviq-border);
+}
+
+.fi-fo-file-upload-input-ctn:hover {
+    background-color: var(--noreviq-primary-soft);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--noreviq-primary) 48%, var(--noreviq-border));
+}
+
+.fi-fo-file-upload:not(.fi-fo-file-upload-avatar) .filepond--root,
+.fi-fo-file-upload:not(.fi-fo-file-upload-avatar) .filepond--file,
+.fi-fo-file-upload-editor-window,
+.fi-fo-file-upload-editor-control-panel,
+.fi-fo-file-upload-editor-control-panel-group {
+    border-radius: var(--noreviq-radius-card);
+}
+
+.fi-fo-repeater-item,
+.fi-fo-builder-item,
+.fi-fo-simple-repeater-item,
+.fi-fo-key-value-table-ctn {
+    border-radius: var(--noreviq-radius-card);
+    background-color: var(--noreviq-surface);
+    box-shadow: var(--noreviq-shadow-surface), 0 0 0 1px var(--noreviq-border);
+}
+
+.fi-fo-repeater-item-header,
+.fi-fo-builder-item-header {
+    border-color: var(--noreviq-border);
+    background-color: var(--noreviq-surface-subtle);
+    background-image: none;
+}
+
+.fi-fo-repeater-item-header-label,
+.fi-fo-builder-item-header-label {
+    color: var(--noreviq-text);
+    font-weight: 600;
+}
+
+.fi-fo-builder-block-picker-ctn {
+    border-radius: var(--noreviq-radius-overlay);
+    background-color: var(--noreviq-surface);
+    box-shadow: var(--noreviq-shadow-overlay), 0 0 0 1px var(--noreviq-border);
+}
+
+.fi-fo-builder-block-picker {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.fi-fo-toggle-buttons .fi-btn {
+    border-radius: var(--noreviq-radius-control);
+    transition: background-color var(--noreviq-motion), box-shadow var(--noreviq-motion), color var(--noreviq-motion);
+}
+
+.fi-fo-toggle-buttons input:checked + .fi-btn.fi-color-primary {
+    background-image: none;
+    box-shadow: inset 0 -2px 0 color-mix(in oklab, white 44%, transparent);
+}
+
+.fi-fo-toggle-buttons input:focus-visible + .fi-btn {
+    outline: 2px solid var(--noreviq-focus-outline);
+    outline-offset: 2px;
+}

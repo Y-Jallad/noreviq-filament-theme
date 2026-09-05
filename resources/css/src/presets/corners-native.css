@@ -1,0 +1,15 @@
+/* Filament-compatible native radius scale. */
+
+:root {
+    --noreviq-radius-control: var(--radius-md);
+    --noreviq-radius-card: var(--radius-xl);
+    --noreviq-radius-overlay: var(--radius-xl);
+    --noreviq-radius-pill: 999px;
+    --noreviq-radius-toggle: 999px;
+    --noreviq-radius-toggle-handle: 999px;
+
+    --radius-sm: 0.25rem;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+}

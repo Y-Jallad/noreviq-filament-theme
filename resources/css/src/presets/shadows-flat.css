@@ -1,0 +1,10 @@
+/* No decorative elevation; borders and focus rings remain intact. */
+
+:root,
+.dark {
+    --noreviq-shadow-surface: 0 0 transparent;
+    --noreviq-shadow-action: 0 0 transparent;
+    --noreviq-shadow-raised: 0 0 transparent;
+    --noreviq-shadow-overlay: 0 0 transparent;
+    --noreviq-shadow-shell: 0 0 transparent;
+}

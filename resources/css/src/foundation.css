@@ -1,0 +1,123 @@
+/* Noreviq design tokens. Filament remains responsible for component geometry. */
+
+:root {
+    color-scheme: light;
+
+    --noreviq-primary: var(--primary-600);
+    --noreviq-primary-hover: var(--primary-700);
+    --noreviq-primary-active: var(--primary-800);
+    --noreviq-primary-text: var(--primary-700);
+    --noreviq-primary-soft: color-mix(in oklab, var(--primary-600) 8%, transparent);
+
+    --noreviq-canvas: #f4f7f7;
+    --noreviq-surface: #ffffff;
+    --noreviq-surface-subtle: #f8fafa;
+    --noreviq-surface-muted: #e9eeee;
+    --noreviq-border: #d7dede;
+    --noreviq-border-strong: #bcc7c7;
+    --noreviq-text: #172022;
+    --noreviq-text-muted: #647174;
+
+    --noreviq-sidebar: #0d2a2d;
+    --noreviq-sidebar-deep: #07191b;
+    --noreviq-sidebar-text: #f2fffd;
+    --noreviq-sidebar-muted: #a8c2c0;
+
+    /* Corners and elevation are supplied by the selected preset assets. */
+    --noreviq-radius-round: 999px;
+    --noreviq-ring-control: 0 0 0 1px var(--noreviq-border-strong);
+    --noreviq-ring-focus: 0 0 0 1px var(--noreviq-primary), 0 0 0 4px color-mix(in oklab, var(--noreviq-primary) 16%, transparent);
+    --noreviq-focus-outline: color-mix(in oklab, var(--noreviq-primary) 82%, white);
+    --noreviq-motion: 140ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.dark {
+    color-scheme: dark;
+
+    --noreviq-primary-text: var(--primary-300);
+    --noreviq-primary-soft: color-mix(in oklab, var(--primary-500) 12%, transparent);
+
+    --noreviq-canvas: #101516;
+    --noreviq-surface: #182022;
+    --noreviq-surface-subtle: #1d2729;
+    --noreviq-surface-muted: #253033;
+    --noreviq-border: #344144;
+    --noreviq-border-strong: #46575a;
+    --noreviq-text: #eef5f4;
+    --noreviq-text-muted: #a0aeac;
+
+    --noreviq-sidebar: #0a2426;
+    --noreviq-sidebar-deep: #050f10;
+    --noreviq-sidebar-text: #f2fffd;
+    --noreviq-sidebar-muted: #9ebbb8;
+
+    --noreviq-ring-control: 0 0 0 1px var(--noreviq-border-strong);
+    --noreviq-ring-focus: 0 0 0 1px var(--primary-400), 0 0 0 4px color-mix(in oklab, var(--primary-400) 20%, transparent);
+    --noreviq-focus-outline: var(--primary-300);
+}
+
+body.fi-body {
+    accent-color: var(--noreviq-primary);
+    background-color: var(--noreviq-canvas);
+    color: var(--noreviq-text);
+}
+
+body.fi-body ::selection {
+    background-color: color-mix(in oklab, var(--noreviq-primary) 22%, transparent);
+    color: var(--noreviq-text);
+}
+
+body.fi-body * {
+    scrollbar-color: color-mix(in oklab, var(--noreviq-primary) 62%, transparent) color-mix(in oklab, var(--noreviq-primary) 5%, transparent);
+}
+
+body.fi-body *::-webkit-scrollbar-track {
+    background-color: color-mix(in oklab, var(--noreviq-primary) 4%, transparent);
+}
+
+body.fi-body *::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: var(--noreviq-radius-control);
+    background-color: color-mix(in oklab, var(--noreviq-primary) 66%, transparent);
+    background-clip: padding-box;
+}
+
+body.fi-body *::-webkit-scrollbar-thumb:hover {
+    background-color: var(--noreviq-primary);
+    background-clip: padding-box;
+}
+
+/* Panel shell and page-level typography. */
+
+.fi-body {
+    background-color: var(--noreviq-canvas);
+    background-image: linear-gradient(135deg, color-mix(in oklab, var(--noreviq-primary) 2.5%, transparent), transparent 26rem);
+}
+
+.dark .fi-body {
+    background-image: linear-gradient(135deg, color-mix(in oklab, var(--noreviq-primary) 4.5%, transparent), transparent 30rem);
+}
+
+.fi-header-heading,
+.fi-simple-header-heading {
+    color: var(--noreviq-text);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.fi-header-subheading,
+.fi-simple-header-subheading,
+.fi-breadcrumbs {
+    color: var(--noreviq-text-muted);
+}
+
+.fi-breadcrumbs .fi-icon {
+    color: color-mix(in oklab, var(--noreviq-primary) 66%, transparent);
+}
+
+.fi-skip-link {
+    border-radius: var(--noreviq-radius-control);
+    background-color: var(--noreviq-primary);
+    color: white;
+    box-shadow: var(--noreviq-shadow-overlay);
+}

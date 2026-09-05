@@ -1,0 +1,189 @@
+/* Navigation carries the Noreviq identity while preserving Filament's layout. */
+
+.fi-sidebar {
+    border-inline-end-color: rgb(255 255 255 / 0.08);
+    background-color: var(--noreviq-sidebar);
+    background-image:
+        radial-gradient(circle at 12% -4%, color-mix(in oklab, var(--primary-400) 22%, transparent), transparent 20rem),
+        linear-gradient(168deg, var(--noreviq-sidebar), var(--noreviq-sidebar-deep) 84%);
+    color: var(--noreviq-sidebar-text);
+    box-shadow: var(--noreviq-shadow-shell);
+}
+
+.dark .fi-sidebar {
+    border-inline-end-color: color-mix(in oklab, var(--primary-400) 10%, transparent);
+    background-image:
+        radial-gradient(circle at 12% -4%, color-mix(in oklab, var(--primary-500) 20%, transparent), transparent 20rem),
+        linear-gradient(168deg, var(--noreviq-sidebar), var(--noreviq-sidebar-deep) 86%);
+    box-shadow: var(--noreviq-shadow-shell);
+}
+
+.fi-sidebar-header {
+    border-bottom-color: rgb(255 255 255 / 0.08);
+    background-color: rgb(255 255 255 / 0.018);
+    box-shadow: none;
+}
+
+.fi-sidebar .fi-logo,
+.fi-sidebar .fi-icon-btn {
+    color: var(--noreviq-sidebar-text);
+}
+
+.fi-sidebar-group-label,
+.fi-sidebar-group-btn,
+.fi-sidebar-group-collapse-btn {
+    color: var(--noreviq-sidebar-muted);
+}
+
+.fi-sidebar-group-label {
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.fi-sidebar-item-btn {
+    border-radius: var(--noreviq-radius-control);
+    color: var(--noreviq-sidebar-muted);
+    transition: background-color var(--noreviq-motion), box-shadow var(--noreviq-motion), color var(--noreviq-motion);
+}
+
+.fi-sidebar .fi-sidebar-item-btn .fi-sidebar-item-label,
+.fi-sidebar .fi-sidebar-item-btn .fi-sidebar-item-icon,
+.fi-sidebar .fi-sidebar-item-btn > .fi-icon {
+    color: inherit;
+}
+
+.fi-sidebar-item-btn:hover {
+    background-color: rgb(255 255 255 / 0.07);
+    color: var(--noreviq-sidebar-text);
+}
+
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn,
+.fi-sidebar-item-has-active-child-items > .fi-sidebar-item-btn {
+    background-color: var(--noreviq-primary);
+    background-image: linear-gradient(90deg, var(--primary-600), var(--primary-700));
+    color: white;
+    box-shadow: inset 3px 0 0 color-mix(in oklab, var(--primary-200) 72%, transparent);
+}
+
+[dir='rtl'] .fi-sidebar-item.fi-active > .fi-sidebar-item-btn,
+[dir='rtl'] .fi-sidebar-item-has-active-child-items > .fi-sidebar-item-btn {
+    box-shadow: inset -3px 0 0 color-mix(in oklab, var(--primary-200) 72%, transparent);
+}
+
+.fi-sidebar:not(.fi-sidebar-open) .fi-sidebar-item.fi-active > .fi-sidebar-item-btn,
+.fi-sidebar:not(.fi-sidebar-open) .fi-sidebar-item-has-active-child-items > .fi-sidebar-item-btn {
+    background-image: none;
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--primary-200) 62%, transparent);
+}
+
+/* Filament reserves a stable scrollbar gutter on one side of the navigation. */
+.fi-sidebar:not(.fi-sidebar-open) .fi-sidebar-nav {
+    scrollbar-gutter: stable both-edges;
+}
+
+.fi-sidebar-item-badge-ctn .fi-badge {
+    background-color: rgb(255 255 255 / 0.1);
+    color: var(--noreviq-sidebar-text);
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.12);
+}
+
+.fi-sidebar .fi-tenant-menu-trigger {
+    border-radius: var(--noreviq-radius-control);
+    background-color: rgb(255 255 255 / 0.055);
+    color: var(--noreviq-sidebar-text);
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.1);
+}
+
+.fi-sidebar .fi-tenant-menu-trigger:hover {
+    background-color: rgb(255 255 255 / 0.09);
+    box-shadow: inset 3px 0 0 color-mix(in oklab, var(--primary-300) 60%, transparent);
+}
+
+.fi-sidebar .fi-tenant-menu-trigger-current-tenant-label {
+    color: var(--noreviq-sidebar-muted);
+}
+
+.fi-sidebar .fi-tenant-menu-trigger-tenant-name {
+    color: var(--noreviq-sidebar-text);
+}
+
+.fi-sidebar-footer {
+    border-top-color: rgb(255 255 255 / 0.075);
+    background-color: rgb(0 0 0 / 0.1);
+}
+
+.fi-topbar-ctn .fi-topbar {
+    border-bottom-color: rgb(255 255 255 / 0.1);
+    background-color: var(--noreviq-sidebar);
+    background-image: none;
+    color: var(--noreviq-sidebar-text);
+    box-shadow: inset 0 -1px 0 rgb(255 255 255 / 0.1);
+}
+
+.fi-topbar .fi-logo,
+.fi-topbar .fi-icon-btn {
+    color: var(--noreviq-sidebar-text);
+}
+
+.fi-topbar .fi-icon-btn:hover,
+.fi-topbar .fi-icon-btn:focus-visible {
+    background-color: rgb(255 255 255 / 0.08);
+    color: white;
+}
+
+.fi-topbar-item-btn {
+    border-radius: var(--noreviq-radius-control);
+    color: var(--noreviq-sidebar-muted);
+}
+
+.fi-topbar-item-btn > .fi-icon,
+.fi-topbar-item-label {
+    color: inherit;
+}
+
+.fi-topbar-item-btn:hover,
+.fi-topbar-item-btn:focus-visible {
+    background-color: rgb(255 255 255 / 0.08);
+    color: var(--noreviq-sidebar-text);
+}
+
+.fi-topbar-item.fi-active .fi-topbar-item-btn {
+    background-color: var(--noreviq-primary);
+    color: white;
+    box-shadow: inset 0 -2px 0 var(--primary-300);
+}
+
+.fi-topbar .fi-user-avatar {
+    box-shadow: 0 0 0 1px rgb(255 255 255 / 0.18);
+}
+
+.fi-theme-switcher {
+    border-radius: var(--noreviq-radius-card);
+    background-color: var(--noreviq-surface-muted);
+    box-shadow: inset 0 0 0 1px var(--noreviq-border);
+}
+
+.fi-theme-switcher-btn {
+    border-radius: var(--noreviq-radius-control);
+    background-color: transparent;
+    color: var(--noreviq-text-muted);
+    box-shadow: none;
+    transition: background-color var(--noreviq-motion), color var(--noreviq-motion), box-shadow var(--noreviq-motion);
+}
+
+.fi-theme-switcher-btn:hover {
+    background-color: var(--noreviq-surface-subtle);
+    color: var(--noreviq-primary-text);
+    box-shadow: inset 0 0 0 1px var(--noreviq-border-strong);
+}
+
+.fi-theme-switcher-btn.fi-active {
+    background-color: var(--noreviq-primary);
+    color: white;
+    box-shadow: inset 0 0 0 1px var(--noreviq-primary-hover);
+}
+
+.fi-theme-switcher-btn:focus-visible {
+    outline: 2px solid var(--noreviq-focus-outline);
+    outline-offset: 2px;
+}

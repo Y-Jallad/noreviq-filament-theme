@@ -1,0 +1,15 @@
+/* Restrained corners for teams that want a softer Noreviq surface language. */
+
+:root {
+    --noreviq-radius-control: 0.25rem;
+    --noreviq-radius-card: 0.5rem;
+    --noreviq-radius-overlay: 0.5rem;
+    --noreviq-radius-pill: 0.25rem;
+    --noreviq-radius-toggle: 0.25rem;
+    --noreviq-radius-toggle-handle: 0.125rem;
+
+    --radius-sm: 0.125rem;
+    --radius-md: 0.25rem;
+    --radius-lg: 0.375rem;
+    --radius-xl: 0.5rem;
+}

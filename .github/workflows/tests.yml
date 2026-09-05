@@ -1,0 +1,43 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      COMPOSER_ROOT_VERSION: 1.0.0
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.2', '8.4']
+        filament: ['^4.0', '^5.0']
+
+    name: PHP ${{ matrix.php }} / Filament ${{ matrix.filament }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Resolve dependency matrix
+        run: composer update --with "filament/filament:${{ matrix.filament }}" --with-all-dependencies --no-interaction --prefer-dist
+
+      - name: Verify generated theme assets
+        run: node bin/verify.mjs
+
+      - name: Run tests
+        run: vendor/bin/phpunit
+
+      - name: Check formatting
+        run: vendor/bin/pint --test
