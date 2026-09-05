@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2 - 2026-09-05
+
+- Added application cache clearing to the documented asset installation flow.
+
 ## 1.0.1 - 2026-09-05
 
 - Corrected the installation order so assets are published after plugin registration.

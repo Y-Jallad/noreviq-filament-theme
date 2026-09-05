@@ -55,10 +55,12 @@ public function panel(Panel $panel): Panel
 }
 ```
 
-Publish the theme assets after registering the plugin:
+Publish the theme assets and clear cached application state after registering
+the plugin:
 
 ```bash
 php artisan filament:assets
+php artisan optimize:clear
 ```
 
 ## Options
@@ -82,8 +84,7 @@ NoreviqThemePlugin::make()
 | Shadows | `Flat`, `Balanced`, `Elevated` | `Balanced` |
 | Auth | `Noreviq`, `Native` | `Noreviq` |
 
-Run `php artisan filament:assets` again after changing a preset or upgrading the
-package.
+Run both commands again after changing a preset or upgrading the package.
 
 The palette is part of the theme and is intentionally fixed. Noreviq does not
 change panel navigation, dimensions, content width, branding, font, routes,
