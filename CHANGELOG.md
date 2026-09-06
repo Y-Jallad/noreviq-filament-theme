@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.7 - 2026-09-06
+
+- Updated the pinned GitHub Actions dependencies used by the test workflow.
+- Brought the changelog up to date for releases 1.0.4 through 1.0.6.
+- No runtime or theme behavior changes.
+
 ## 1.0.6 - 2026-09-06
 
 - Added a seven-day cooldown for automated dependency updates.
