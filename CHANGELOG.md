@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.0.6 - 2026-09-06
+
+- Added a seven-day cooldown for automated dependency updates.
+
+## 1.0.5 - 2026-09-06
+
+- Pinned GitHub Actions to immutable commit SHAs.
+- Added automated dependency updates for Composer and GitHub Actions.
+- Added a security policy with vulnerability reporting guidance.
+
+## 1.0.4 - 2026-09-05
+
+- Improved the preview layout with consistent full-width screenshots.
+- Reordered the authentication and component previews and made the light mode preview always visible.
+- Simplified the public documentation by removing development-only instructions.
+- Added automated coverage for all 18 visual option combinations.
+
 ## 1.0.3 - 2026-09-05
 
 - Clarified that the plugin must be registered before publishing its assets.
